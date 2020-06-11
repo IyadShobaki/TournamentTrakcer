@@ -4,7 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrackerLibrary
+//after we add all models to Models folder is better to add ".Models" after TrackerLibrary
+//if you create a new class after creating the Models file ".Models" will added automaticlly
+//but becasue we create our models before and add them to the folder later, will not have ".Models"
+//namespace TrackerLibrary   --> original 
+namespace TrackerLibrary.Models
 {
     /// <summary>
     /// Represents one match in the tournament.

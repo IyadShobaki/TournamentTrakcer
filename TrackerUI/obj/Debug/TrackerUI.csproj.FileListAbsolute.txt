@@ -15,3 +15,5 @@ D:\C#Projects\TournamentTrackerProject1\TournamentTrakcer\TrackerUI\obj\Debug\Tr
 D:\C#Projects\TournamentTrackerProject1\TournamentTrakcer\TrackerUI\bin\Debug\TrackerLibrary.dll
 D:\C#Projects\TournamentTrackerProject1\TournamentTrakcer\TrackerUI\bin\Debug\TrackerLibrary.pdb
 D:\C#Projects\TournamentTrackerProject1\TournamentTrakcer\TrackerUI\obj\Debug\TrackerUI.csproj.CopyComplete
+D:\C#Projects\TournamentTrackerProject1\TournamentTrakcer\TrackerUI\bin\Debug\Dapper.dll
+D:\C#Projects\TournamentTrackerProject1\TournamentTrakcer\TrackerUI\bin\Debug\Dapper.xml
