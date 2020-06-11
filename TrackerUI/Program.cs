@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace TrackerUI
 {
+    
     static class Program
     {
         /// <summary>
@@ -16,7 +17,13 @@ namespace TrackerUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TournamentDashboardForm());
+
+            //Note 5
+            //add the following code to initialize the database connection (you need to add TrackerLibrary to referecne first)
+            TrackerLibrary.GlobalConfig.InitializeConnections(true, true);
+            Application.Run(new CreatePrizeForm());  //to test the connection 
+
+            //Application.Run(new TournamentDashboardForm()); //the original 
         }
     }
 }
