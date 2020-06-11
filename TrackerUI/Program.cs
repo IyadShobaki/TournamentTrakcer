@@ -22,7 +22,7 @@ namespace TrackerUI
             //Note 5
             //add the following code to initialize the database connection (you need to add TrackerLibrary to referecne first)
             TrackerLibrary.GlobalConfig.InitializeConnections(DatabaseType.TextFile);
-            Application.Run(new CreatePrizeForm());  //just for testing the connection 
+            Application.Run(new CreateTeamForm());  //just for testing the connection 
 
             //Application.Run(new TournamentDashboardForm()); //the original and final form 
         }

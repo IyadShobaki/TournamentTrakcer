@@ -11,7 +11,9 @@ namespace TrackerLibrary.DataAccess
     {
         //we don't need a public access modifier because in interfaces every items are public
         PrizeModel CreatePrize(PrizeModel model); //who ever implemets this interface will have
-                                                    //a method called CreatePrize
+                                                  //a method called CreatePrize
+
+        PersonModel CreatePerson(PersonModel model);
     }
 }
 
