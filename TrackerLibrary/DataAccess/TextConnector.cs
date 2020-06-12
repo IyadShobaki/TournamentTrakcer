@@ -12,6 +12,7 @@ namespace TrackerLibrary.DataAccess
     {
         private const string PrizesFile = "PrizeModels.cvs";
         private const string PeopleFile = "PersonModels.cvs";
+        private const string TeamFile = "TeamModels.cvs";
         public PersonModel CreatePerson(PersonModel model)
         {
             List<PersonModel> people = PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
@@ -62,6 +63,35 @@ namespace TrackerLibrary.DataAccess
             //5-Convert the prizes to List<string>
             //6-Save the List<string> to the text file (overwritting) 
             prizes.SaveToPrizeFile(PrizesFile);
+
+            return model;
+        }
+
+        public TeamModel CreateTeam(TeamModel model)
+        {
+            //1-Load the text file  2-Convert the text to List<PrizeModel> 
+
+            //in sql we send information to 2 different tables (Teams and TeamMembers)
+            //To a text file we don't need to do that
+            //in TeamModel we have (Id, TeamName, list of PersonModel (TeamMembers))
+            //so we don't need to have two different text files. We need just a way to handle the list
+            List<TeamModel> teams = TeamFile.FullFilePath().LoadFile().ConvertToTeamModels(PeopleFile);
+
+            //3-Find the max ID  (use the LINQ query in order to get the max ID)
+            int currentId = 1;
+
+            if (teams.Count > 0)
+            {
+                currentId = teams.OrderByDescending(x => x.Id).First().Id + 1;//find the last id and add 1
+            }
+            model.Id = currentId;
+
+            //4-Add the new record with the new ID (max + 1)
+            teams.Add(model);
+
+            //5-Convert the prizes to List<string>
+            //6-Save the List<string> to the text file (overwritting) 
+            teams.SaveToTeamFile(TeamFile);
 
             return model;
         }

@@ -12,6 +12,13 @@ namespace TrackerLibrary.Models
 {
     public class TeamModel //change to public 
     {
+        public int Id { get; set; }
+
+        /// <summary>
+        /// The name of the team.
+        /// </summary>
+        public string TeamName { get; set; }
+
         /// <summary>
         /// The set of team members that have been added.
         /// </summary>
@@ -19,9 +26,6 @@ namespace TrackerLibrary.Models
         //we have to initialize the TeamMembers prop because by default will be an uninitialized list
         //in old version of visual studio we have to create a constructor to initialize it. but instead 
         //we initialize it above 
-        /// <summary>
-        /// The name of the team.
-        /// </summary>
-        public string TeamName { get; set; }
+        
     }
 }
