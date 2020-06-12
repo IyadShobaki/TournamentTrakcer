@@ -36,5 +36,16 @@ namespace TrackerLibrary.Models
         /// </summary>
         public string CellphoneNumber { get; set; }
 
+
+        //to show in the drop down and the list, we need a good combined property
+        //uses on or more of the previous properties 
+
+        public string FullName
+        {
+            get { return $"{ FirstName } { LastName }"; }
+           
+        }
+
+
     }
 }

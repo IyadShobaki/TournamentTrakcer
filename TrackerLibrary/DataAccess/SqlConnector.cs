@@ -16,10 +16,11 @@ namespace TrackerLibrary.DataAccess
     //IDataConnection interface 
     public class SqlConnector : IDataConnection
     {
+        private const string db = "Tournaments";
         public PersonModel CreatePerson(PersonModel model)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(
-             GlobalConfig.CnnString("Tournaments")))
+             GlobalConfig.CnnString(db)))
             {
 
                 var p = new DynamicParameters();
@@ -49,7 +50,7 @@ namespace TrackerLibrary.DataAccess
             //using access modifier will fix the problem about memory leak, because it will close the connection
             //so its open the connection and close each time the method called
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(
-                GlobalConfig.CnnString("Tournaments")))
+                GlobalConfig.CnnString(db)))
             {
                
                 var p = new DynamicParameters();
@@ -65,6 +66,19 @@ namespace TrackerLibrary.DataAccess
 
                 return model;
             }
+        }
+
+        public List<PersonModel> GetPerson_All()    
+        {
+            List<PersonModel> output; //we don't need to initialize it
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(
+                GlobalConfig.CnnString(db)))
+            {
+                output = connection.Query<PersonModel>("dbo.spPeople_GetAll").ToList();
+            }
+            //we can do just (return connection.Query<PersonModel>("dbo.spPeople_GetAll").ToList();)
+            //but create output variable is easier for debugging
+            return output;
         }
     }
 }
