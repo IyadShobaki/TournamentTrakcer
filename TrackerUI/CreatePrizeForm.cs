@@ -15,16 +15,19 @@ namespace TrackerUI
 {
     public partial class CreatePrizeForm : Form
     {
-        public CreatePrizeForm()
+        IPrizeRequester callingForm;
+        public CreatePrizeForm(IPrizeRequester caller)
         {
             InitializeComponent();
+
+            callingForm = caller;
         }
 
-        private void CreatePrizeForm_Load(object sender, EventArgs e)
+        private void CreatePrizeForm_Load(object sender, EventArgs e) 
         {
-
+            //this created by mistake (we don't need it) ---- Iyad 
+            //but if I deleted I wil get an error
         }
-
         private void createPrizeButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
@@ -36,16 +39,21 @@ namespace TrackerUI
                     prizeAmountValue.Text,
                     prizePercentageValue.Text);
 
+               
                 GlobalConfig.Connection.CreatePrize(model);
                 //foreach (IDataConnection db in GlobalConfig.Connections) //when it was a list
                 //{
                 //    db.CreatePrize(model);
                 //}
+                callingForm.PrizeComplete(model);
 
-                placeNameValue.Text = "";
-                placeNumberValue.Text = "";
-                prizeAmountValue.Text = "0";
-                prizePercentageValue.Text = "0";
+                this.Close();
+
+                //we don't need the following, because we will close our form at this point
+                //placeNameValue.Text = "";
+                //placeNumberValue.Text = "";
+                //prizeAmountValue.Text = "0";
+                //prizePercentageValue.Text = "0";
 
             }
             else

@@ -106,7 +106,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
                 //but I will discover next video (Lesson 15). He test writing to the file
                 //but not reading from it
 
-
+                output.Add(t);  //when we start dealing with text file in Lesson 16 (the minute 35)
             }
             return output;
         }
