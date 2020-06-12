@@ -47,7 +47,7 @@
             this.headerLabel.AutoSize = true;
             this.headerLabel.Font = new System.Drawing.Font("Segoe UI Light", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.headerLabel.Location = new System.Drawing.Point(25, 33);
+            this.headerLabel.Location = new System.Drawing.Point(30, 9);
             this.headerLabel.Name = "headerLabel";
             this.headerLabel.Size = new System.Drawing.Size(270, 65);
             this.headerLabel.TabIndex = 12;
@@ -55,9 +55,9 @@
             // 
             // placeNumberValue
             // 
-            this.placeNumberValue.Location = new System.Drawing.Point(321, 115);
+            this.placeNumberValue.Location = new System.Drawing.Point(339, 115);
             this.placeNumberValue.Name = "placeNumberValue";
-            this.placeNumberValue.Size = new System.Drawing.Size(211, 43);
+            this.placeNumberValue.Size = new System.Drawing.Size(218, 43);
             this.placeNumberValue.TabIndex = 14;
             // 
             // placeNumberLabel
@@ -73,9 +73,9 @@
             // 
             // placeNameValue
             // 
-            this.placeNameValue.Location = new System.Drawing.Point(321, 185);
+            this.placeNameValue.Location = new System.Drawing.Point(339, 185);
             this.placeNameValue.Name = "placeNameValue";
-            this.placeNameValue.Size = new System.Drawing.Size(211, 43);
+            this.placeNameValue.Size = new System.Drawing.Size(218, 43);
             this.placeNameValue.TabIndex = 18;
             // 
             // placeNameLabel
@@ -91,9 +91,9 @@
             // 
             // prizePercentageValue
             // 
-            this.prizePercentageValue.Location = new System.Drawing.Point(321, 385);
+            this.prizePercentageValue.Location = new System.Drawing.Point(339, 385);
             this.prizePercentageValue.Name = "prizePercentageValue";
-            this.prizePercentageValue.Size = new System.Drawing.Size(211, 43);
+            this.prizePercentageValue.Size = new System.Drawing.Size(218, 43);
             this.prizePercentageValue.TabIndex = 22;
             this.prizePercentageValue.Text = "0";
             // 
@@ -110,9 +110,9 @@
             // 
             // prizeAmountValue
             // 
-            this.prizeAmountValue.Location = new System.Drawing.Point(321, 256);
+            this.prizeAmountValue.Location = new System.Drawing.Point(339, 256);
             this.prizeAmountValue.Name = "prizeAmountValue";
-            this.prizeAmountValue.Size = new System.Drawing.Size(211, 43);
+            this.prizeAmountValue.Size = new System.Drawing.Size(218, 43);
             this.prizeAmountValue.TabIndex = 20;
             this.prizeAmountValue.Text = "0";
             // 

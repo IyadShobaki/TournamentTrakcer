@@ -102,7 +102,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
                 {
                     t.TeamMembers.Add(people.Where(x => x.Id == int.Parse(id)).First());
                 }
-                // output.Add(t);  //I'm not sure why the teacher didn't put this, 
+                // output.Add(t);  //I'm not sure why the teacher didn't put this code  
                 //but I will discover next video (Lesson 15). He test writing to the file
                 //but not reading from it
 

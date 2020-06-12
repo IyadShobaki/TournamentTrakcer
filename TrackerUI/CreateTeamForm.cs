@@ -23,7 +23,7 @@ namespace TrackerUI
 
            //CreateSampleData();
 
-            WireUpList();
+            WireUpLists();
         }
 
         //private void LoadListData()
@@ -40,7 +40,7 @@ namespace TrackerUI
             selectedTeamMembers.Add(new PersonModel { FirstName = "Jane", LastName = "Smith" });
             selectedTeamMembers.Add(new PersonModel { FirstName = "Sue", LastName = "Storm" });
         }
-        private void WireUpList()
+        private void WireUpLists()
         {
             //Its better to find a better way to refresh the data binding instead
             //of initialize drop down and list box to null
@@ -51,14 +51,17 @@ namespace TrackerUI
             //and you have to create binding data source
             //because the drop down didn't know how to deal with a list directly
             selectTeamMemebrDropDown.DataSource = availableTeamMembers;
-            selectTeamMemebrDropDown.DisplayMember = "FullName";
+            //selectTeamMemebrDropDown.DisplayMember = "FullName";
+            selectTeamMemebrDropDown.DisplayMember = nameof(PersonModel.FullName);
+
 
             teamMemebersListBox.DataSource = null;
 
             teamMemebersListBox.DataSource = selectedTeamMembers;
-            teamMemebersListBox.DisplayMember = "FullName";
+            //teamMemebersListBox.DisplayMember = "FullName";
+            teamMemebersListBox.DisplayMember = nameof(PersonModel.FullName);
 
-           
+
         }
         private void createMemberButton_Click(object sender, EventArgs e)
         {
@@ -73,7 +76,7 @@ namespace TrackerUI
                 p = GlobalConfig.Connection.CreatePerson(p);
 
                 selectedTeamMembers.Add(p);
-                WireUpList();
+                WireUpLists();
 
                 firstNameValue.Text = "";
                 lastNameValue.Text = "";
@@ -117,7 +120,7 @@ namespace TrackerUI
                 availableTeamMembers.Remove(p);
                 selectedTeamMembers.Add(p);
 
-                WireUpList(); 
+                WireUpLists(); 
             }
             
         }
@@ -131,7 +134,7 @@ namespace TrackerUI
                 selectedTeamMembers.Remove(p);
                 availableTeamMembers.Add(p);
 
-                WireUpList(); 
+                WireUpLists(); 
             }
         }
 
