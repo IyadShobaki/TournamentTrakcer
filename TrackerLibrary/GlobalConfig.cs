@@ -13,6 +13,12 @@ namespace TrackerLibrary
     //that will connect to our database
     public static class GlobalConfig //change it to public static to be always visible
     {
+        public const string PrizesFile = "PrizeModels.csv";
+        public const string PeopleFile = "PersonModels.csv";
+        public const string TeamFile = "TeamModels.csv";
+        public const string TournamentFile = "TournamentModels.csv";
+        public const string MatchupFile = "MatchupModels.csv";
+        public const string MatchupEntryFile = "MatchupEntryModels.csv";
 
         //we need to make the following code static 
         //we need to make set; private, so only the methods inside this static class
@@ -22,10 +28,10 @@ namespace TrackerLibrary
         //we create a list of IDataConnection, because we could have more data sources to save
         //or to pull from
 
-   
+
         //Note 4
-       //old version (using list of connections) of the following code is down. 
-       //rename Connections to Connection
+        //old version (using list of connections) of the following code is down. 
+        //rename Connections to Connection
         public static IDataConnection Connection { get; private set; }
         public static void InitializeConnections(DatabaseType db)
         {

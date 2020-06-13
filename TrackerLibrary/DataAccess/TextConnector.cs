@@ -10,10 +10,13 @@ namespace TrackerLibrary.DataAccess
     
     class TextConnector : IDataConnection
     {
-        private const string PrizesFile = "PrizeModels.cvs";
-        private const string PeopleFile = "PersonModels.cvs";
-        private const string TeamFile = "TeamModels.cvs";
+        private const string PrizesFile = "PrizeModels.csv";
+        private const string PeopleFile = "PersonModels.csv";
+        private const string TeamFile = "TeamModels.csv";
         private const string TournamentFile = "TournamentModels.csv";
+        private const string MatchupFile = "MatchupModels.csv";
+        private const string MatchupEntryFile = "MatchupEntryModels.csv";
+
         public PersonModel CreatePerson(PersonModel model)
         {
             List<PersonModel> people = PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
@@ -112,6 +115,8 @@ namespace TrackerLibrary.DataAccess
             }
 
             model.Id = currentId;
+
+           model.SaveRoundsToFile( MatchupFile, MatchupEntryFile);
 
             tournaments.Add(model);
 
