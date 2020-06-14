@@ -86,7 +86,7 @@ namespace TrackerLibrary
 
             for (int i = 1; i <= rounds; i++)
             {
-                totalTeams += 2;
+                totalTeams *= 2;
             }
             output = totalTeams - numberOfTeams;
 
