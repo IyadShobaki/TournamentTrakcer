@@ -23,8 +23,11 @@ namespace TrackerLibrary.DataAccess
 
         List<PersonModel> GetPerson_All();
 
+        List<TournamnetModel> GetTournament_All();
 
-      
+
+
+
     }
 }
 
