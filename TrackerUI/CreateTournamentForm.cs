@@ -149,7 +149,9 @@ namespace TrackerUI
             //the next line will do the previous three tasks
             GlobalConfig.Connection.CreateTournament(tm);
 
-           
+            TournamentViewerForm frm = new TournamentViewerForm(tm);
+            frm.Show();
+            this.Close();
         }
     }
 }

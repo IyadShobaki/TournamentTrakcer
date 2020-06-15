@@ -10,12 +10,12 @@ namespace TrackerLibrary.DataAccess
     public interface IDataConnection //change it to public 
     {
         //we don't need a public access modifier because in interfaces every items are public
-        PrizeModel CreatePrize(PrizeModel model); //who ever implemets this interface will have
+        void CreatePrize(PrizeModel model); //who ever implemets this interface will have
                                                   //a method called CreatePrize
 
-        PersonModel CreatePerson(PersonModel model);
+        void CreatePerson(PersonModel model);
 
-        TeamModel CreateTeam(TeamModel model);
+        void CreateTeam(TeamModel model);
 
         void CreateTournament(TournamnetModel model);
 
