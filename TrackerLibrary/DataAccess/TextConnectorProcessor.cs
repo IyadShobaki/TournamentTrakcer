@@ -30,7 +30,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
         public static string FullFilePath(this string fileName) // example - PrizeModel.csv
         {
             //D:\C#Projects\TournamentTrackerProject1\TournamentTrakcer\TextFilesDB\PrizeModel.csv
-            return $"{ ConfigurationManager.AppSettings["filePath"]}\\{ fileName }";
+            return $"{ ConfigurationManager.AppSettings["filePath"] }\\{ fileName }";
         }
 
         //we need another extension method //1-Load the text file
