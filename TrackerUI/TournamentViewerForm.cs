@@ -162,8 +162,42 @@ namespace TrackerUI
             LoadMatchups((int)roundDropDown.SelectedItem);
         }
 
+        private string ValidateData()
+        {
+            string output = "";
+            //double teamOneScore = 0;   old versions
+            //double teamTwoScore = 0;
+            bool scoreOneValid = double.TryParse(teamOneScoreValue.Text, out double teamOneScore);
+            bool scoreTwoValid = double.TryParse(teamTwoScoreValue.Text, out double teamTwoScore);
+
+            if (!scoreOneValid)
+            {
+                output = "The Score One value is not a valid number.";
+            }
+            else if (!scoreTwoValid)
+            {
+                output = "The Score Two value is not a valid number.";
+            }
+            else if (teamOneScore == 0 && teamTwoScore == 0)
+            {
+                output = "You did not enter a score for eaither team.";
+            }
+            else if (teamOneScore == teamTwoScore)
+            {
+                output = "We do not allow ties in this application.";
+            }
+
+            return output;
+        }
         private void scoreButton_Click(object sender, EventArgs e)
         {
+            string errorMessage = ValidateData();
+            if (errorMessage.Length > 0)
+            {
+                MessageBox.Show($"Input Error: { errorMessage }");
+                return;
+            }
+
             MatchupModel m = (MatchupModel)matchupListBox.SelectedItem;
             double teamOneScore = 0;
             double teamTwoScore = 0;
@@ -207,7 +241,15 @@ namespace TrackerUI
                 }
             }
 
-            TournamentLogic.UpdateTournamentResult(tournamnet);
+            try
+            {
+                TournamentLogic.UpdateTournamentResult(tournamnet);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"The application had the following error: { ex.Message }");
+                return;
+            }
 
             LoadMatchups((int)roundDropDown.SelectedItem);
         }
