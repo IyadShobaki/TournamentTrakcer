@@ -61,7 +61,7 @@
             this.tournamentName.AutoSize = true;
             this.tournamentName.Font = new System.Drawing.Font("Segoe UI Light", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tournamentName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.tournamentName.Location = new System.Drawing.Point(300, 9);
+            this.tournamentName.Location = new System.Drawing.Point(336, 9);
             this.tournamentName.Name = "tournamentName";
             this.tournamentName.Size = new System.Drawing.Size(193, 65);
             this.tournamentName.TabIndex = 1;
@@ -195,6 +195,7 @@
             this.scoreButton.TabIndex = 13;
             this.scoreButton.Text = "Score";
             this.scoreButton.UseVisualStyleBackColor = true;
+            this.scoreButton.Click += new System.EventHandler(this.scoreButton_Click);
             // 
             // TournamentViewerForm
             // 
