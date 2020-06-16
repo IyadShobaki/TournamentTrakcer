@@ -27,11 +27,18 @@ namespace TrackerUI
 
             tournamnet = tournamnetModel;
 
+            tournamnet.onTournamentComplete += Tournamnet_onTournamentComplete;
+
             WireUpLists();
 
             LoadFormData();
 
             LoadRounds();
+        }
+
+        private void Tournamnet_onTournamentComplete(object sender, DateTime e)
+        {
+            this.Close();
         }
 
         private void LoadFormData()
